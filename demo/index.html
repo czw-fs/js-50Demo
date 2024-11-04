@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .quote {
+            position: relative;
+            padding: 20px;
+            border-left: 5px solid #3498db;
+            margin: 20px;
+            font-style: italic;
+        }
+
+        .quote:before {
+            content: '“';
+            font-size: 40px;
+            color: #3498db;
+            position: absolute;
+            top: 10px;
+            left: -15px;
+        }
+
+        .quote:after {
+            content: '”';
+            font-size: 40px;
+            color: #3498db;
+            position: absolute;
+            bottom: 10px;
+            right: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <blockquote class="quote">
+        这是一个引用的文本。
+    </blockquote>
+
+</body>
+</html>
