@@ -6,89 +6,84 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           crossorigin="anonymous"/>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #333;
+            overflow-x: hidden;
+            transform-origin: top left;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fafafa;
+            transform-origin: top left;
+
+            width: 100vw;
+            min-height: 100vh;
+            padding: 50px;
+            transition: all 0.4s linear;
+        }
+
+        .circle-container {
+            position: fixed;
+            top: -100px;
+            left: -100px;
+        }
+
+        .circle {
+            background-color: #ff7979;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.5s linear;
+        }
+
+        .circle button {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100px;
+            background: transparent;
+            border: 0;
+            font-size: 26px;
+            color: #fff;
+        }
+        .circle button#open {
+            left: 60%;
+        }
+
+        .circle button#close {
+            top: 60%;
+            transform: rotate(90deg);
+            transform-origin: top left;
+        }
+
+        .container.show-nav {
+            transform: rotate(-20deg);
+        }
+        .container.show-nav .circle {
+            transform: rotate(-70deg);
+        }
+
+
+
+        nav {
+            position: fixed;
+            bottom: 40px;
+            left: 0;
+            z-index: 100;
+        }
+    </style>
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: #333;
-        overflow-x: hidden;
-        margin: 0;
-    }
-
-    .container {
-        background-color: #fafafa;
-        transform-origin: top left;
-
-        width: 100vw;
-        min-height: 100vh;
-        padding: 50px;
-    }
-
-
-
-    .circle-container {
-        position: fixed;
-        top: -100px;
-        left: -100px;
-    }
-
-    .circle {
-        background-color: #ff7979;
-        height: 200px;
-        width: 200px;
-        border-radius: 50%;
-        position: relative;
-    }
-
-    .circle button {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height: 100px;
-        background: transparent;
-        border: 0;
-        font-size: 26px;
-        color: #fff;
-    }
-
-    .circle button#open {
-        left: 60%;
-    }
-
-    .circle button#close {
-        top: 60%;
-        transform: rotate(90deg);
-        transform-origin: top left;
-    }
-
-    .container.show-nav {
-        transform: rotate(-20deg);
-    }
-    .container.show-nav .circle {
-        transform: rotate(-70deg);
-    }
-
-
-
-    nav {
-        position: fixed;
-        bottom: 40px;
-        left: 0;
-        z-index: 100;
-    }
-
-
-
-
-
-</style>
 <body>
+
     <div class="container">
         <div class="circle-container">
             <div class="circle">
@@ -128,6 +123,4 @@
         </script>
     </div>
 </body>
-
-
 </html>
