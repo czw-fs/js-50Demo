@@ -22,11 +22,12 @@
 
     .container {
         background-color: #fafafa;
-        transform-origin: top left;
-
         width: 100vw;
         min-height: 100vh;
         padding: 50px;
+
+        transform-origin: top left;
+        transition: all 0.3s linear;
     }
 
 
@@ -38,23 +39,27 @@
     }
 
     .circle {
-        background-color: #ff7979;
         height: 200px;
         width: 200px;
+        background-color: #ff7979;
+
         border-radius: 50%;
         position: relative;
+        transition: all 0.3s linear;
     }
 
     .circle button {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height: 100px;
         background: transparent;
         border: 0;
         font-size: 26px;
         color: #fff;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100px;
+
+        cursor: pointer;
     }
 
     .circle button#open {

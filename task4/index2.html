@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+            margin: 0;
+        }
+
+        .search {
+            position: relative;
+            height: 50px;
+        }
+
+        .search input {
+            background-color: #fff;
+            border: 0;
+            font-size: 18px;
+            padding: 15px;
+            height: 50px;
+            width: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .search .btn {
+            border: 0;
+            cursor: pointer;
+            background-color: #fff;
+            font-size: 16px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            height: 50px;
+            width: 50px;
+
+            transition: all 0.3s ease;
+        }
+
+        .btn:focus,
+        .input:focus {
+            outline: none;
+        }
+
+        .search.active .input{
+            width: 200px;
+        }
+        .search.active .btn {
+            left: 198px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="search">
+        <input type="text" class="input">
+        <button class="btn">搜索</button>
+    </div>
+
+    <script>
+        const search = document.querySelector(".search")
+        const input = document.querySelector(".input")
+        const btn = document.querySelector(".btn")
+
+        btn.addEventListener("click",()=> {
+            search.classList.toggle("active")
+            input.focus()
+        })
+    </script>
+</body>
+</html>

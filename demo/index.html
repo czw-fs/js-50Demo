@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-       .quote{
-           width: 400px;
-           height: 400px;
-           background-color: skyblue;
+        .quote {
+            width: 400px;
+            height: 400px;
+            background-color: skyblue;
 
-           display: flex;
-           justify-content: center;
-           align-items: center;
-       }
-
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotate(50deg);
+        }
+        .quote div {
+            transform: rotate(-50deg); /* 子元素逆向旋转50度，抵消父元素的旋转 */
+        }
     </style>
 </head>
 <body>
-    <div class="quote">你好</div>
+    <div class="quote">
+        <div>你好</div>
+    </div>
 
 </body>
 </html>
