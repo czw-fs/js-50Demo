@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            background-color: #686de0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px 20px;
+        }
+
+        .container{
+            padding: 50px 20px;
+            background-color: #fff;
+            width: 800px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        h1{
+            color: grey;
+            font-size: 15px;
+        }
+        .content{
+            font-size: 30px;
+            padding: 5px;
+        }
+
+        .btn{
+            margin-top: 15px;
+            padding: 15px 114px;
+            font-size: 20px;
+            outline: none;
+            background-color: #9f68e0;
+            border: 0;
+            border-radius: 5px;
+        }
+        .btn:active{
+            transform: scale(0.98);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>不要笑挑战</h1>
+        <div class="content">内容</div>
+        <button class="btn">下一个笑话</button>
+    </div>
+
+    <script>
+
+        const getJoker = async()=>{
+            const config = {
+                headers: {
+                    Accept: 'application/json',
+                },
+            }
+            const res = await fetch("https://icanhazdadjoke.com",config)
+            const data = await res.json();
+
+            const content = document.querySelector(".content");
+            content.innerText = data.joke;
+        }
+        getJoker();
+
+        const btn = document.querySelector(".btn")
+        btn.onclick = ()=> getJoker();
+    </script>
+</body>
+</html>

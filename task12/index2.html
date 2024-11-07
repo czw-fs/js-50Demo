@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+          crossorigin="anonymous"/>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 600px;
+        }
+
+        .faq {
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 30px;
+
+            position: relative;
+        }
+
+        .answer {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translateY(-50%);
+            outline: none;
+            border: 0;
+            border-radius: 5px;
+            background-color: grey;;
+            cursor: pointer;
+            padding: 2px 3px;
+        }
+
+        .close {
+            display: none;
+        }
+
+        .faq.active .btn .open {
+            display: none;
+        }
+
+        .faq.active .btn .close {
+            display: inline-block;
+        }
+
+        .faq.active::before,
+        .faq.active::after {
+            content: '\f075';
+            font-family: 'Font Awesome 5 Free';
+            color: #2ecc71;
+            font-size: 5rem;
+            position: absolute;
+            opacity: 0.2;
+            top: 1px;
+            left: 20px;
+            z-index: 0;
+        }
+
+        .faq.active::before {
+            color: #3498db;
+            top: 0;
+            left: 116px;
+            transform: rotateY(180deg);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq active">
+            <h3>人生的意义是什么？</h3>
+            <p class="answer">人生没有意义</p>
+            <button class="btn">
+                <span class="open">打开</span>
+                <span class="close">关闭</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

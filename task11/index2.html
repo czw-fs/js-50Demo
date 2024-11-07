@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #383838;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .insert {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .key {
+            border: 1px solid #fff;
+            padding: 42px 163px;
+            color: #fff;
+            margin: 10px;
+            position: relative;
+        }
+
+        .key small {
+            position: absolute;
+            left: 50%;
+            top: -30%;
+            transform: translateX(-50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="insert">
+        <div class="key">按任意键获取键编码</div>
+    </div>
+
+    <script>
+        window.onkeydown = (event)=>{
+            document.querySelector(".insert").innerHTML = `
+                          <div class="key">
+                            ${event.key === ' ' ? 'Space' : event.key}
+                          <small>event.key</small>
+                        </div>
+
+                        <div class="key">
+                          ${event.keyCode}
+                          <small>event.keyCode</small>
+                        </div>
+
+                        <div class="key">
+                          ${event.code}
+                          <small>event.code</small>
+                        </div>
+            `
+        }
+
+    </script>
+</body>
+</html>
